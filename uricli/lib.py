@@ -70,7 +70,7 @@ def print_toast(browser):
     toast_data = re.findall("show\((\{[^\})]+\})", html)
     if toast_data:
         toast_data = demjson.decode(toast_data[0])
-        print(toast_data['message'])
+        print(toast_data['message'] + " vc pode acompanhar o status da sua submissao no link:\n\033[1;32;48m" + str(browser.get_url()) + '\033[1;37;0m')
 
 
 def set_login(email, password):
@@ -92,14 +92,14 @@ def get_login():
 def ensure_logged_in(browser):
     email, password = get_login()
 
-    if browser.get_url().endswith("/login"):
-        browser.select_form('form[action$="/login"]')
+    if "/login" in browser.get_url():
+        browser.select_form('form[action$="/judge/en/login?redirect=%2Fen%2Fruns%2Fadd"]')
         browser['email'] = email
         browser['password'] = password
         browser['remember_me'] = 1
         browser.submit_selected()
 
-    if browser.get_url().endswith("/login"):
+    if "/login" in browser.get_url():
         print_toast(browser)
         raise RuntimeError("Failed to login.")
 

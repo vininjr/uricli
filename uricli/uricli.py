@@ -22,6 +22,7 @@ from PyInquirer import prompt
 from . import lib
 from .live import LiveSession
 
+import json
 
 __version__ = "0.2.1"
 
@@ -56,7 +57,8 @@ def cmd_set_language():
     ]
     answers = prompt(questions)
     language_key = answers['language_key']
-    language_id = language_map[language_key]
+    language_details = json.loads(language_key)
+    language_id = language_details['id']
 
     lib.set_language(language_id)
 
