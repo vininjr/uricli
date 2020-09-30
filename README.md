@@ -1,4 +1,5 @@
 # URI Online Judge Command Line Interface
+[![Build Status](https://travis-ci.org/vasi/pixz.svg?branch=master)](https://vininjr.github.io)
 Utility CLI for submitting solutions to URI Online Judge
 
 ### Install:
