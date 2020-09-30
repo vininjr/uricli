@@ -1,7 +1,5 @@
-# uri-cli
-Utility CLI for submitting solutions to URI Online Judge
-
-### URI Online Judge Command Line Interface
+# URI Online Judge Command Line Interface
+```Utility CLI for submitting solutions to URI Online Judge```
 
 ### Usage:
   - uri login
