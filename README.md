@@ -49,3 +49,11 @@ uri submit /home/USER/codes/problem2010.cpp 2010
 |19 | Pascal|
 |20 | Python 3.8|
 |21 | Java 14|
+
+### Attribution
+
+This Code is adapted from the [Contributor Covenant][homepage], version 0.2.0,
+available at [https://github.com/rafael-telles/uricli][version]
+
+[homepage]: https://github.com/rafael-telles/uricli
+[version]: https://pypi.org/project/uricli/
