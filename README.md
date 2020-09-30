@@ -6,7 +6,7 @@ Utility CLI for submitting solutions to URI Online Judge
 ### Usage:
   - uri login
   - uri set_language
-  - uri submit <solution_path> [<problem_id>]
+  - uri submit <solution_path> <problem_id>
   - uri live
 
 ### Arguments
