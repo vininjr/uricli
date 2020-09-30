@@ -52,8 +52,8 @@ uri submit /home/USER/codes/problem2010.cpp 2010
 
 ### Attribution
 
-This Code is adapted from the [Contributor Covenant][homepage], version 0.2.0,
-available at [https://github.com/rafael-telles/uricli][version]
+This Code is adapted from the [Rafael Telles][homepage], version 0.2.0,
+available at [PyPI][version]
 
 [homepage]: https://github.com/rafael-telles/uricli
 [version]: https://pypi.org/project/uricli/
