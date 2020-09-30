@@ -19,3 +19,28 @@ Utility CLI for submitting solutions to URI Online Judge
     <solution_path>     Path to the file containing to solution.
     <problem_id>        URI Online Judge's problem ID
 ```
+
+### Language Id's:
+
+| Id     | Name |
+| ---      | ---       |
+|1 | C|
+|2 | C++|
+|3 | Java|
+|4 | Python|
+|5 | Python 3|
+|6 | Ruby|
+|7 | C#|
+|8| | Scala|
+|9 | Lua|
+|10 | Javascript|
+|11 | Java 8|
+|12 | Go|
+|14 | C99|
+|15 | Kotlin|
+|16 | C++17|
+|17 | Haskell|
+|18 | Ocaml|
+|19 | Pascal|
+|20 | Python 3.8|
+|21 | Java 14|
