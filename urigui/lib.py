@@ -4,7 +4,6 @@ import shelve
 
 try:
     from pathlib import Path
-
     Path().expanduser()
 except (ImportError, AttributeError):
     from pathlib2 import Path  # Patch for Python 2.x
@@ -12,6 +11,7 @@ except (ImportError, AttributeError):
 import requests
 import mechanicalsoup
 import demjson
+from bs4 import BeautifulSoup
 
 DATA_DIR = Path.home().joinpath(".uricli")
 if not DATA_DIR.exists():
@@ -67,10 +67,31 @@ def submit(solution_path, problem_id):
 
 def print_toast(browser):
     html = str(browser.get_current_page())
-    toast_data = re.findall("show\((\{[^\})]+\})", html)
-    if toast_data:
-        toast_data = demjson.decode(toast_data[0])
-        print(toast_data['message'] + " vc pode acompanhar o status da sua submissao no link:\n\033[1;32;48m" + str(browser.get_url()) + '\033[1;37;0m')
+    print("Você pode acompanhar o status da sua submissao no link:\n\033[1;32;48m" + str(
+        browser.get_url()) + '\033[1;37;0m')
+    try:
+        last_status = ""
+        while True:
+            browser.refresh()
+            html = str(browser.get_current_page())
+            soup = BeautifulSoup(html, "lxml")
+            msg_s = []
+            for i in [0, 1, 2, 3, 4, 5, 6, 7, 8]:
+                msg_s = soup.findAll('span', attrs={
+                    'class': 'answer a-'+str(i)})
+                if msg_s:
+                    break
+            if len(msg_s):
+                if msg_s[0].text.strip() == last_status:
+                    continue
+                print("[status atual] "+msg_s[0].text.replace("-","").strip())
+                last_status = msg_s[0].text.strip()
+                if "queue" not in last_status:
+                    break
+            else:
+                break
+    except Exception as e:
+        pass
 
 
 def set_login(email, password):
@@ -93,7 +114,8 @@ def ensure_logged_in(browser):
     email, password = get_login()
 
     if "/login" in browser.get_url():
-        browser.select_form('form[action$="/judge/en/login?redirect=%2Fen%2Fruns%2Fadd"]')
+        browser.select_form(
+            'form[action$="/judge/en/login?redirect=%2Fen%2Fruns%2Fadd"]')
         browser['email'] = email
         browser['password'] = password
         browser['remember_me'] = 1
