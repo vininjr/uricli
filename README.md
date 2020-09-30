@@ -8,6 +8,7 @@ Utility CLI for submitting solutions to URI Online Judge
   or
   pip3 install -U urigui
 ```
+[PyPI Package][pypipage]
 
 ### Usage:
   - uri login
@@ -56,5 +57,6 @@ uri submit /home/USER/codes/problem2010.cpp 2010
 This Code is adapted from the [Rafael Telles][homepage], version 0.2.0,
 available at [PyPI][version]
 
+[pypipage]: https://pypi.org/project/urigui/
 [homepage]: https://github.com/rafael-telles/uricli
 [version]: https://pypi.org/project/uricli/

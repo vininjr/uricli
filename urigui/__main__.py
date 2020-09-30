@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
 
-from .uricli import main
+from .urigui import main
 main()

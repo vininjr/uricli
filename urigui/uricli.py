@@ -24,7 +24,7 @@ from .live import LiveSession
 
 import json
 
-__version__ = "0.2.1"
+__version__ = "2.0.1"
 
 
 def cmd_login():
@@ -66,7 +66,7 @@ def cmd_set_language():
 def cmd_submit(arguments):
     try:
         lib.get_language()
-    except:
+    except BaseException:
         cmd_set_language()  # Ensure language is set first
 
     solution_path = arguments["<solution_path>"]
