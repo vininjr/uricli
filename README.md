@@ -20,6 +20,11 @@ Utility CLI for submitting solutions to URI Online Judge
     <problem_id>        URI Online Judge's problem ID
 ```
 
+### Example:
+```
+uri submit /home/USER/codes/problem2010.cpp 2010
+```
+
 ### Language Id's:
 
 | Id     | Name |
@@ -31,7 +36,7 @@ Utility CLI for submitting solutions to URI Online Judge
 |5 | Python 3|
 |6 | Ruby|
 |7 | C#|
-|8| | Scala|
+|8 | Scala|
 |9 | Lua|
 |10 | Javascript|
 |11 | Java 8|
